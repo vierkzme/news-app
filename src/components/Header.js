@@ -38,6 +38,14 @@ export default function Header() {
                 type="search"
                 placeholder="Search..."
                 className="py-1 px-3 rounded border border-gray-300"
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    goToSearch();
+                  }
+                }}
               />
             </div>
           )}
@@ -85,6 +93,12 @@ export default function Header() {
               className="py-1 px-3 rounded text-black"
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  goToSearch();
+                }
+              }}
             />
             <Search className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
           </div>
