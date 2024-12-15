@@ -77,6 +77,11 @@ export default function Header() {
               </Link>
             </li>
             <li>
+              <Link to="/covid" className="hover:text-gray-300">
+                COVID-19
+              </Link>
+            </li>
+            <li>
               <Link to="/saved" className="hover:text-gray-300">
                 Saved
               </Link>
