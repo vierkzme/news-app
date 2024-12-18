@@ -9,7 +9,7 @@ export default function ProgrammingPage() {
   const dispatch = useDispatch();
   const { articles, savedArticles } = useSelector((state) => state.news);
   useEffect(() => {
-    dispatch(fetchNews("Programming"));
+    dispatch(fetchNews("Programming Api"));
   }, [dispatch]);
   return (
     <div className="min-h-screen bg-white-100">
