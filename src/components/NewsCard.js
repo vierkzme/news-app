@@ -10,9 +10,10 @@ export default function NewsCard({ article, isSaved }) {
 
   return (
     <div className=" p-6 rounded-lg ">
-      <span className="text-sm text-gray-600">{article.source}</span>
-      <h2 className="text-xl font-bold mt-2 mb-4">{article.headline.main}</h2>
-      <p className="text-gray-700 mb-4">{article.snippet}</p>
+      <span className="text-sm text-gray-800">{article.source}</span>
+      <h2 className="text-xl font-bold mt-2 mb-2">{article.headline.main}</h2>
+      <span className="text-sm text-gray-600">{article.byline.original}</span>
+      <p className="text-gray-800 font-medium mt-4 mb-4">{article.snippet}</p>
       <div className="flex justify-between items-center">
         <a
           href={article.web_url}

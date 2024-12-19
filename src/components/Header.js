@@ -1,7 +1,6 @@
 import { Search, Menu } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { fetchNews } from "../redux/actions/newsActions";
@@ -67,24 +66,52 @@ export default function Header() {
         >
           <ul className="flex flex-col space-y-2 lg:flex-row lg:space-x-4 lg:space-y-0">
             <li>
-              <Link to="/" className="hover:text-gray-300">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sky-500 underline underline-offset-8"
+                    : "text-gray-300 hover:text-white"
+                }
+              >
                 Indonesia
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/programming" className="hover:text-gray-300">
+              <NavLink
+                to="/programming"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sky-500 underline underline-offset-8"
+                    : "text-gray-300 hover:text-white"
+                }
+              >
                 Programming
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/covid" className="hover:text-gray-300">
+              <NavLink
+                to="/covid"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sky-500 underline underline-offset-8"
+                    : "text-gray-300 hover:text-white"
+                }
+              >
                 COVID-19
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/saved" className="hover:text-gray-300">
+              <NavLink
+                to="/saved"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sky-500 underline underline-offset-8"
+                    : "text-gray-300 hover:text-white"
+                }
+              >
                 Saved
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -105,11 +132,10 @@ export default function Header() {
                 }
               }}
             />
-            <Search className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
           </div>
           <button
             onClick={goToSearch}
-            className="bg-stone-500 text-white px-4 py-1 rounded hover:bg-stone-700"
+            className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700"
           >
             Cari Berita
           </button>

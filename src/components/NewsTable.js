@@ -19,8 +19,8 @@ export default function NewsTable() {
               article={article}
               className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}
             >
-              <td className="p-2 pb-10">
-                {article.source}
+              <td className="p-2">
+                {article.source} - {article.byline.original}
                 <br></br>
                 <a
                   href={article.web_url}
@@ -31,8 +31,8 @@ export default function NewsTable() {
                   News Page
                 </a>
               </td>
-              <td>{article.headline.main}</td>
-              <td>{article.snippet}</td>
+              <td className="p-2">{article.headline.main}</td>
+              <td className="p-2">{article.snippet}</td>
             </tr>
           ))}
         </tbody>
