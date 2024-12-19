@@ -9,7 +9,7 @@ export default function NewsCard({ article, isSaved }) {
   };
 
   return (
-    <div className=" p-6 rounded-lg ">
+    <div className=" p-6 rounded-lg mt-5">
       <span className="text-sm text-gray-800">{article.source}</span>
       <h2 className="text-xl font-bold mt-2 mb-2">{article.headline.main}</h2>
       <span className="text-sm text-gray-600">{article.byline.original}</span>

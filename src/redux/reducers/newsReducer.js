@@ -7,6 +7,8 @@ const initialState = {
 
 const newsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "FETCH_NEWS_REQUEST":
+      return { ...state, error: null, loading: true };
     case "FETCH_NEWS_SUCCESS":
       return { ...state, articles: action.payload, loading: false };
     case "FETCH_NEWS_ERROR":
