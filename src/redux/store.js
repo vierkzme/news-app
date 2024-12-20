@@ -5,6 +5,7 @@ import newsReducer from "./reducers/newsReducer";
 
 const rootReducer = combineReducers({
   news: newsReducer,
+  search: newsReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

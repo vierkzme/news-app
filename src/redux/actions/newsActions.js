@@ -26,3 +26,13 @@ export const toggleSaveArticle = (article) => ({
   type: "TOGGLE_SAVE_ARTICLE",
   payload: article,
 });
+
+export const setSearchKeyword = (keyword) => ({
+  type: "SET_SEARCH_KEYWORD",
+  payload: keyword,
+});
+
+export const setSearchResults = (results) => ({
+  type: "SET_SEARCH_RESULTS",
+  payload: results,
+});

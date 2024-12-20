@@ -3,17 +3,25 @@ import NewsCard from "../components/NewsCard";
 import SkeletonCard from "../components/SkeletonCard";
 
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, useNavigate } from "react-router-dom";
+import { fetchNews, setSearchKeyword } from "../redux/actions/newsActions";
 
 export default function SearchPage() {
   const { keyword } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { articles, savedArticles, loading, error } = useSelector(
     (state) => state.news
   );
+
+  useEffect(() => {
+    if (keyword) {
+      dispatch(setSearchKeyword(keyword));
+      dispatch(fetchNews(keyword));
+    }
+  }, [keyword, dispatch]);
 
   useEffect(() => {
     if (error) {

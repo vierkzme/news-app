@@ -3,10 +3,16 @@ const initialState = {
   savedArticles: [],
   loading: false,
   error: null,
+  keyword: "",
+  results: [],
 };
 
 const newsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "SET_SEARCH_KEYWORD":
+      return { ...state, keyword: action.payload };
+    case "SET_SEARCH_RESULTS":
+      return { ...state, results: action.payload };
     case "FETCH_NEWS_REQUEST":
       return { ...state, error: null, loading: true };
     case "FETCH_NEWS_SUCCESS":
